@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Добавить отряд";
+}
+@model DZ.ViewModels.DetachmentRegisterModel;
+
+<div class="text-center">
+    <form method="post" asp-action="AddDett">
+        <div>
+            <h6>Название отрядника</h6>
+            <input type="text" asp-for="Name" required/>
+        </div>
+        <div>
+            <h6>Профиль</h6>
+            <select asp-for="Profile" required>
+                @foreach (DZ.Models.ProfileModel p in ViewBag.Profile)
+                {
+                    <option value=@Convert.ToString(p.Name)>@Convert.ToString(p.Name)</option>
+                }
+            </select>
+        </div>
+        <div>
+            <h6>Дата образования</h6>
+            <input type="date" asp-for="StarDate" required/>
+        </div>
+        <div>
+            <h6>Университет</h6>
+            <select asp-for="University" required>
+                @foreach (DZ.Models.UniversityModel u in ViewBag.University)
+                {
+                    <option value="@Convert.ToString(u.Name)">@Convert.ToString(u.Name)</option>
+                }
+            </select>
+        </div>
+        <button type="submit">COCK</button>
+    </form>
+</div>

@@ -3,6 +3,22 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Brigada base</h1>
+    <table style="width:100%">
+        <tr>
+            <th style="width:25%">Название отряда</th>
+            <th style="width:25%">Профиль отряда</th>
+            <th style="width:25%">Университет</th>
+            <th style="width:25%">Дата Основания</th>
+        </tr>
+        @foreach (DZ.Models.DetachmentsModel m in ViewBag.Detachments)
+        {
+            <tr>
+                <th style="width:25%">@m.Name</th>
+                <th style="width:25%">@m.Profile.Name</th>
+                <th style="width:25%">@m.University.Name</th>
+                <th style="width:25%">@m.StartDate</th>
+            </tr>
+        }
+    </table>
 </div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Добавить отрядника";
+}
+@model DZ.ViewModels.OtryadnikRegisterModel;
+
+<div class="text-center">
+    <form asp-action="AddOtr" method="post">
+        <div>
+            <h6>Имя отрядника</h6>
+            <input type="text" asp-for="Name" required/>
+        </div>
+        <div>
+            <h6>Фамилия отрядника</h6>
+            <input type="text" asp-for="Surname" required/>
+        </div>
+        <div>
+            <h6>День рождения</h6>
+            <input type="date" asp-for="DateOfBirth" required/>
+        </div>
+        <div>
+            <h6>Должность</h6>
+            <select asp-for="Position" required>
+                @foreach (DZ.Models.PositionsModel p in ViewBag.Position)
+                {
+                    <option value=@Convert.ToString(p.PositionName)>@Convert.ToString(p.PositionName)</option>
+                }
+            </select>
+        </div>
+        <div>
+            <h6>Отряд</h6>
+            <select asp-for="Detachment" required>
+                @foreach (DZ.Models.DetachmentsModel d in ViewBag.Detachment)
+                {
+                    <option value="@Convert.ToString(d.Name)">@Convert.ToString(d.Name)</option>
+                }
+            </select>
+        </div>
+        <button type="submit">COCK</button>
+    </form>
+</div>

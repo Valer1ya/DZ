@@ -54,7 +54,7 @@ namespace DZ.Controllers
                 if (user == null)
                 {
                     // добавляем пользователя в бд
-                    db.Users.Add(new User { Email = model.Email, Password = model.Password });
+                    db.Users.Add(new User { Email = model.Email, Password = model.Password, RoleId = 2 });
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Email); // аутентификация
