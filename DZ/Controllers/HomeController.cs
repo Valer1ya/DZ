@@ -76,5 +76,15 @@ namespace DZ.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        [HttpGet]
+        public IActionResult Otryad(int id)
+        {
+            DetachmentsModel Detachment = _context.DetachmentsModels.Find(id);
+            if (Detachment == null) { return NotFound(); }
+            ViewBag.Otryadniks = _context.Otryadniks.Where(x => x.Detachment == Detachment).ToArray(); 
+
+            return View(Detachment);
+
+        }
     }
 }

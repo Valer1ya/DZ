@@ -1,0 +1,19 @@
+﻿@model DetachmentsModel
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+    <table style="width:100%">
+        <tr>
+            <th style="width:25%">Имя отрядника</th>
+            <th style="width:25%">Отряд</th>
+            <th style="width:25%">Университет</th>
+        </tr>
+        @foreach (DZ.Models.Otryadnik o in ViewBag.Otryadniks)
+        {
+            <tr>
+                <th style="width:25%">@o.Name</th>
+                <th style="width:25%">@o.Surname</th>
+                <th style="width:25%">@o.Position.PositionName</th>
+            </tr>
+        }
+    </table>
+</div>

@@ -50,9 +50,9 @@ public class UserContext : DbContext
             ProfileModel stroymod = new ProfileModel { Id = 4, Name = stroy };
 
             UniversityModel urfu = new UniversityModel { Id = 1, Name = "УрФУ" };
-            UniversityModel urgppu = new UniversityModel { Id = 2, Name = "УрГППУ" };
+            UniversityModel urgppu = new UniversityModel { Id = 2, Name = "РГППУ" };
             UniversityModel sinh = new UniversityModel { Id = 3, Name = "УрГЭУ СИНХ" };
-            UniversityModel lesteh = new UniversityModel { Id = 4, Name = "ЛесТех" };
+            UniversityModel lesteh = new UniversityModel { Id = 4, Name = "УГЛТУ" };
 
             PositionsModel kmdr = new PositionsModel { Id = 1, PositionName = "Командир" };
             PositionsModel kmsr = new PositionsModel { Id = 2, PositionName = "Комиссар" };
